@@ -34,16 +34,16 @@ reserved = {
 tokens = [
    'OPERATOR',
    'FLOAT',
-   'INTEGER'
+   'INTEGER',
    'STRING',
    'INCLCUDE',
    'LINECOMMENT',
    'BLOCKCOMMENT',
    'CHARACHER',
-   'LIST',
    'IDENTIFIER',
-   'LINE'
-   'LEFT'
+   'LINE',
+   'BRACHET',
+   'SEMICOLON',
 ]+list(reserved.values())
 
 def t_OPERATOR(t):
@@ -60,7 +60,7 @@ def t_FLOAT(t):
      return t
 
 def t_INTEGER(t):
-     r'[1-9]+[0-9]*'
+     r'\d+'
      return t
 
 def t_STRING(t):
@@ -83,8 +83,12 @@ def t_CHARACHER(t):
      r"'\D'"
      return t
 
-def t_LIST(t):
-     r'{(\d*,)*(\d*)*}'
+def t_BRACHET(t):
+     r'[\(|\)|\[|\]|\{|\}]'
+     return t
+
+def t_SEMICOLON(t):
+     r';'
      return t
 
 def t_LINE(t):

@@ -10,8 +10,8 @@ int func(int s, long int a)
 
 void main()
 {
-    int a = 0;
-    float b,d = 4;
+    int a = 1;
+    float b,d = 4.4;
     double x[123] = {0};
     
     for ()
